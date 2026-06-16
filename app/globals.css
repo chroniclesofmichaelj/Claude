@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --akl-navy: #003057;
+  --akl-teal: #007B87;
+  --akl-sky: #00A9CE;
+  --akl-sand: #F5F0E8;
+  --akl-coral: #E05C2A;
+  --akl-gold: #C8973A;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--akl-sand);
+  color: #333;
+}
+
+.akl-gradient {
+  background: linear-gradient(135deg, var(--akl-navy) 0%, var(--akl-teal) 100%);
+}
+
+.copy-card {
+  @apply bg-white rounded-xl border border-gray-100 shadow-sm p-5;
+  transition: box-shadow 0.2s ease;
+}
+
+.copy-card:hover {
+  @apply shadow-md;
+}
+
+.platform-badge {
+  @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+  outline: none;
+  ring: 2px;
+}
+
+.char-safe { color: #16a34a; }
+.char-warn { color: #d97706; }
+.char-over { color: #dc2626; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.loading-pulse {
+  animation: pulse-soft 1.4s ease-in-out infinite;
+}
